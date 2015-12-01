@@ -5,7 +5,7 @@
 ** Login   <bache_a@epitech.net>
 ** 
 ** Started on  Thu Nov 26 10:19:13 2015 Antoine Baché
-** Last update Mon Nov 30 23:46:24 2015 Antoine Baché
+** Last update Tue Dec  1 16:10:56 2015 Antoine Baché
 */
 
 #include "../include/my.h"
@@ -35,7 +35,7 @@ void	show_map(char *file, int *biggest, int width, int j)
 	tmp -= tmp_less;
 	j = 0;
       }
-  my_putstr(file);
+  write(1, file, my_strlen(file));
 }
 
 int	exit_main(int fd, char *file, int *biggest)
@@ -62,12 +62,12 @@ int	main(int ac, char **av)
   else if ((fd = open(av[1], O_RDONLY)) == -1)
     return (1);
   file = parse_file(fd, i);
-  if ((biggest = prepare_tab(file, i[0] - i[1], biggest, 0)) == NULL)
+  if ((biggest = prepare_tab(file, i[0] - i[1], biggest, i[2])) == NULL)
     return (exit_main(fd, file, biggest));
   if (file[0] > 0)
     show_map(file, biggest, i[0] - i[1], 0);
   else
-    my_putstr(file);
+    write(1, file, my_strlen(file));
   if (close(fd) == -1)
     return (1);
   free(biggest);

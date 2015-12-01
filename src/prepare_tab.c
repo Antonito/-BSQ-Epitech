@@ -5,13 +5,13 @@
 ** Login   <bache_a@epitech.net>
 ** 
 ** Started on  Mon Nov 30 16:20:09 2015 Antoine Baché
-** Last update Tue Dec  1 01:23:34 2015 Antoine Baché
+** Last update Tue Dec  1 16:26:23 2015 Antoine Baché
 */
 
 #include "../include/my.h"
 
 int	get_min(int a, int b, int c)
-{
+{ 
   if (a <= b && a <= c)
     return (a + 1);
   else if (b <= a && b <= c)
@@ -50,29 +50,30 @@ int	*exit_prepare_tab(int *tab, int *max)
   return (NULL);
 }
 
-int	*prepare_tab(char *file, int width, int *max, int i)
+int	*prepare_tab(char *file, int width, int *max, int height)
 {
   int	j;
+  int	i;
   int	*tab;
 
   if ((tab = malloc(sizeof(int) * my_strlen(file))) == NULL)
     return (exit_prepare_tab(tab, NULL));
   max = set_max();
   j = 0;
+  i = 0;
   while (file[i++] != '\n');
-  while (file[i] != '\0' && max[0] < width)
+  while (file[i++] != '\0' && max[0] < width && max[0] < height)
     {
-      if (file[i] == '.')
+      if (file[i - 1] == '.')
 	tab[j] = check_lowest(tab, width, j);
-      else if (file[i] == 'o')
+      else if (file[i - 1] == 'o')
 	tab[j] = 0;
-      else if (file[i] == '\n' || file[i] == '\0')
+      else if (file[i - 1] == '\n' || file[i - 1] == '\0')
 	tab[j] = -1;
       else
 	return (exit_prepare_tab(tab, max));
       if (tab[j++] > max[0])
 	max = update_max(max, j - 1, tab[j - 1]);
-      ++i;
     }
   free(tab);
   return (max);

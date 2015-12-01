@@ -5,7 +5,7 @@
 ** Login   <bache_a@epitech.net>
 ** 
 ** Started on  Thu Nov 26 10:17:03 2015 Antoine Baché
-** Last update Tue Dec  1 01:43:36 2015 Antoine Baché
+** Last update Tue Dec  1 14:56:50 2015 Antoine Baché
 */
 
 #ifndef MY_H_
@@ -17,7 +17,6 @@
 # include <unistd.h>
 
 void	show_map(char *, int *, int, int);
-void	my_putstr(char *);
 void	my_putstr_err(char *);
 int	get_min(int, int, int);
 int	check_lowest(int *, int, int);
