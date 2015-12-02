@@ -1,11 +1,11 @@
 /*
 ** parse.c for BSQ in /CPE_2015_bsq
-** 
+**
 ** Made by Antoine Baché
 ** Login   <bache_a@epitech.net>
-** 
+**
 ** Started on  Thu Nov 26 10:41:07 2015 Antoine Baché
-** Last update Tue Dec  1 01:42:45 2015 Antoine Baché
+** Last update Wed Dec  2 00:18:23 2015 Antoine Baché
 */
 
 #include "../include/my.h"

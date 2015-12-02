@@ -1,11 +1,11 @@
 /*
 ** bsq.c for BSQ in /CPE_2015_bsq
-** 
+**
 ** Made by Antoine Baché
 ** Login   <bache_a@epitech.net>
-** 
+**
 ** Started on  Thu Nov 26 10:19:13 2015 Antoine Baché
-** Last update Tue Dec  1 16:10:56 2015 Antoine Baché
+** Last update Wed Dec  2 10:35:05 2015 Antoine Baché
 */
 
 #include "../include/my.h"
@@ -25,15 +25,12 @@ void	show_map(char *file, int *biggest, int width, int j)
   k = 0;
   while (*file++ != '\n');
   while (k++ < biggest_mult)
-    if (j < biggest[0])
-      {
-	file[tmp++] = 'x';
-	++j;
-      }
+    if (++j < biggest[0])
+      file[tmp++] = 'x';
     else
       {
 	tmp -= tmp_less;
-	j = 0;
+	j = -1;
       }
   write(1, file, my_strlen(file));
 }
@@ -65,7 +62,7 @@ int	main(int ac, char **av)
   if ((biggest = prepare_tab(file, i[0] - i[1], biggest, i[2])) == NULL)
     return (exit_main(fd, file, biggest));
   if (file[0] > 0)
-    show_map(file, biggest, i[0] - i[1], 0);
+    show_map(file, biggest, i[0] - i[1], -1);
   else
     write(1, file, my_strlen(file));
   if (close(fd) == -1)
