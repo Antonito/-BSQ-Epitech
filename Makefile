@@ -1,11 +1,11 @@
 ##
 ## Makefile for BSQ in /CPE_2015_bsq
-## 
+##
 ## Made by Antoine Baché
 ## Login   <bache_a@epitech.net>
-## 
+##
 ## Started on  Thu Nov 26 10:50:20 2015 Antoine Baché
-## Last update Mon Nov 30 23:47:09 2015 Antoine Baché
+## Last update Thu Dec  3 09:33:21 2015 Antoine Baché
 ##
 
 SRC=	src/bsq.c \
@@ -17,7 +17,10 @@ SRC=	src/bsq.c \
 
 NAME=	bsq
 
-CC=	gcc -Wall -Wextra -ansi -pedantic
+
+HEAD=	-Iinclude
+
+CC=	gcc $(HEAD) -Wall -Wextra -ansi -pedantic -g
 
 RM=	rm -f
 

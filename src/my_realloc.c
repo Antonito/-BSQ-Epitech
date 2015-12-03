@@ -1,14 +1,14 @@
 /*
 ** my_realloc.c for BSQ in /CPE_2015_bsq
-** 
+**
 ** Made by Antoine Baché
 ** Login   <bache_a@epitech.net>
-** 
+**
 ** Started on  Thu Nov 26 13:00:13 2015 Antoine Baché
-** Last update Tue Dec  1 01:43:20 2015 Antoine Baché
+** Last update Thu Dec  3 09:33:59 2015 Antoine Baché
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int	*prepare_my_size(int *size)
 {

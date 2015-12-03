@@ -1,17 +1,17 @@
 /*
 ** prepare_tab.c for BSQ in /CPE_2015_bsq/src
-** 
+**
 ** Made by Antoine Baché
 ** Login   <bache_a@epitech.net>
-** 
+**
 ** Started on  Mon Nov 30 16:20:09 2015 Antoine Baché
-** Last update Tue Dec  1 16:26:23 2015 Antoine Baché
+** Last update Thu Dec  3 09:34:34 2015 Antoine Baché
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int	get_min(int a, int b, int c)
-{ 
+{
   if (a <= b && a <= c)
     return (a + 1);
   else if (b <= a && b <= c)
@@ -44,7 +44,8 @@ int	*update_max(int *max, int i, int tab)
 int	*exit_prepare_tab(int *tab, int *max)
 {
   my_putstr_err("Invalid character\n");
-  free(tab);
+  if (tab != NULL)
+    free(tab);
   if (max != NULL)
     free(max);
   return (NULL);

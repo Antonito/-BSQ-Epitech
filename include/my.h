@@ -1,11 +1,11 @@
 /*
 ** my.h for BSQ in /CPE_2015_bsq
-** 
+**
 ** Made by Antoine Baché
 ** Login   <bache_a@epitech.net>
-** 
+**
 ** Started on  Thu Nov 26 10:17:03 2015 Antoine Baché
-** Last update Tue Dec  1 14:56:50 2015 Antoine Baché
+** Last update Wed Dec  2 19:17:32 2015 Antoine Baché
 */
 
 #ifndef MY_H_
@@ -30,5 +30,6 @@ int	my_strlen(char *);
 int	exit_main(int, char *, int *);
 int	*exit_prepare_tab(int *, int *);
 int	*prepare_my_size(int *);
+int	free_main(int *, char *);
 
 #endif /* !MY_H_ */

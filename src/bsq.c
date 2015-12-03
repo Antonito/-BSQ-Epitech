@@ -5,10 +5,10 @@
 ** Login   <bache_a@epitech.net>
 **
 ** Started on  Thu Nov 26 10:19:13 2015 Antoine Baché
-** Last update Wed Dec  2 10:35:05 2015 Antoine Baché
+** Last update Thu Dec  3 09:33:37 2015 Antoine Baché
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 void	show_map(char *file, int *biggest, int width, int j)
 {
@@ -43,6 +43,13 @@ int	exit_main(int fd, char *file, int *biggest)
   return (1);
 }
 
+int	free_main(int *biggest, char *file)
+{
+  free(biggest);
+  free(file);
+  return (0);
+}
+
 int	main(int ac, char **av)
 {
   int	fd;
@@ -58,7 +65,8 @@ int	main(int ac, char **av)
     }
   else if ((fd = open(av[1], O_RDONLY)) == -1)
     return (1);
-  file = parse_file(fd, i);
+  if ((file = parse_file(fd, i)) == NULL)
+    return (1);
   if ((biggest = prepare_tab(file, i[0] - i[1], biggest, i[2])) == NULL)
     return (exit_main(fd, file, biggest));
   if (file[0] > 0)
@@ -67,7 +75,5 @@ int	main(int ac, char **av)
     write(1, file, my_strlen(file));
   if (close(fd) == -1)
     return (1);
-  free(biggest);
-  free(file);
-  return (0);
+  return (free_main(biggest, file));
 }

@@ -5,10 +5,10 @@
 ** Login   <bache_a@epitech.net>
 **
 ** Started on  Thu Nov 26 10:41:07 2015 Antoine Baché
-** Last update Wed Dec  2 00:18:23 2015 Antoine Baché
+** Last update Thu Dec  3 09:34:22 2015 Antoine Baché
 */
 
-#include "../include/my.h"
+#include "my.h"
 
 int	*set_max()
 {
