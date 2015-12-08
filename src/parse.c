@@ -5,7 +5,7 @@
 ** Login   <bache_a@epitech.net>
 **
 ** Started on  Thu Nov 26 10:41:07 2015 Antoine Baché
-** Last update Thu Dec  3 09:34:22 2015 Antoine Baché
+** Last update Tue Dec  8 10:33:54 2015 Antoine Baché
 */
 
 #include "my.h"
@@ -21,11 +21,10 @@ int	*set_max()
   return (max);
 }
 
-char	*parse_file(int fd, int *i)
+char	*parse_file(int fd, int *i, char *buff)
 {
   int	reader;
   char	*file;
-  char	buff[BUFF_SIZE];
   int	*size;
 
   file = NULL;

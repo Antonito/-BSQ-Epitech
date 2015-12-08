@@ -5,7 +5,7 @@
 ** Login   <bache_a@epitech.net>
 **
 ** Started on  Mon Nov 30 16:20:09 2015 Antoine Baché
-** Last update Thu Dec  3 09:34:34 2015 Antoine Baché
+** Last update Tue Dec  8 09:40:00 2015 Antoine Baché
 */
 
 #include "my.h"
@@ -62,7 +62,7 @@ int	*prepare_tab(char *file, int width, int *max, int height)
   max = set_max();
   j = 0;
   i = 0;
-  while (file[i++] != '\n');
+  while (*file++ != '\n');
   while (file[i++] != '\0' && max[0] < width && max[0] < height)
     {
       if (file[i - 1] == '.')
