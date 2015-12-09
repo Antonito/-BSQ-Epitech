@@ -5,7 +5,7 @@
 ## Login   <bache_a@epitech.net>
 ##
 ## Started on  Thu Nov 26 10:50:20 2015 Antoine Baché
-## Last update Thu Dec  3 09:33:21 2015 Antoine Baché
+## Last update Wed Dec  9 17:56:58 2015 Antoine Baché
 ##
 
 SRC=	src/bsq.c \
@@ -20,7 +20,7 @@ NAME=	bsq
 
 HEAD=	-Iinclude
 
-CC=	gcc $(HEAD) -Wall -Wextra -ansi -pedantic -g
+CC=	gcc $(HEAD) -Wall -Wextra -Werror -ansi -pedantic
 
 RM=	rm -f
 
