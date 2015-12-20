@@ -5,7 +5,7 @@
 ** Login   <bache_a@epitech.net>
 **
 ** Started on  Thu Nov 26 10:19:13 2015 Antoine Baché
-** Last update Tue Dec  8 10:34:43 2015 Antoine Baché
+** Last update Wed Dec  9 18:19:00 2015 Antoine Baché
 */
 
 #include "my.h"
@@ -70,7 +70,7 @@ int	main(int ac, char **av)
   else if ((fd = open(av[1], O_RDONLY)) == -1)
     return (1);
   if ((buff = malloc(BUFF_SIZE)) == NULL)
-    return (0);
+    return (1);
   if ((file = parse_file(fd, i, buff)) == NULL)
     return (1);
   if ((biggest = prepare_tab(file, i[0] - i[1], biggest, i[2])) == NULL)
