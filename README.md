@@ -7,4 +7,6 @@ Maps can be generated with the script provided in "tests" folder.
 
 Usage: ./bsq map
 
+![Screenshot](/screenshot.png?raw=true "Example")
+
 Grade : 22 / 20
